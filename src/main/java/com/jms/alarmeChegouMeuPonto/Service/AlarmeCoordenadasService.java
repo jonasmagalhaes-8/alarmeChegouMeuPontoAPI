@@ -1,5 +1,6 @@
 package com.jms.alarmeChegouMeuPonto.Service;
 
+import java.util.Date;
 import org.springframework.stereotype.Service;
 import com.jms.alarmeChegouMeuPonto.Model.AlarmeCoordenadasModel;
 import com.jms.alarmeChegouMeuPonto.Repository.AlarmeCoordenadasRepository;
@@ -14,6 +15,7 @@ public class AlarmeCoordenadasService {
 	}
 
 	public void insert(AlarmeCoordenadasModel coordenadas) {
+		coordenadas.setDataCoordenada(new Date());
 		repository.save(coordenadas);
 	}
 
